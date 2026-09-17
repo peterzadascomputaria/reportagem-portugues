@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deixar o Brasil para trás — 2T3 Reportagens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c231f;
+    --ink-soft: #4a534d;
+    --paper: #eee7d6;
+    --paper-raised: #e3dabf;
+    --rule: #cabf9e;
+    --brick: #9a3e34;
+    --ochre: #b9822f;
+    --navy: #1f3244;
+    --focus: #1f3244;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #ece6d8;
+      --ink-soft: #b7ac93;
+      --paper: #161a17;
+      --paper-raised: #1f2420;
+      --rule: #3a3f36;
+      --brick: #d97a6b;
+      --ochre: #d9a55a;
+      --navy: #7fa3c2;
+      --focus: #d9a55a;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #ece6d8;
+    --ink-soft: #b7ac93;
+    --paper: #161a17;
+    --paper-raised: #1f2420;
+    --rule: #3a3f36;
+    --brick: #d97a6b;
+    --ochre: #d9a55a;
+    --navy: #7fa3c2;
+    --focus: #d9a55a;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Work Sans', -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--navy); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  /* Masthead */
+  .masthead {
+    border-bottom: 3px solid var(--ink);
+    padding: 22px 24px 16px;
+  }
+  .masthead-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .site-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 0.01em;
+    margin: 0;
+  }
+  .site-name span { color: var(--brick); }
+  .masthead-meta {
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Article */
+  article { max-width: 680px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .kicker {
+    font-size: 0.9rem;
+    color: var(--brick);
+    font-weight: 500;
+    margin: 0 0 14px;
+  }
+
+  h1.headline {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: clamp(2rem, 5vw, 2.9rem);
+    line-height: 1.12;
+    margin: 0 0 18px;
+    color: var(--ink);
+  }
+
+  .dek {
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    margin: 0 0 22px;
+    max-width: 62ch;
+  }
+
+  .byline {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 12px 0;
+    margin-bottom: 36px;
+  }
+  .byline strong { color: var(--ink); font-weight: 600; }
+
+  article p { margin: 0 0 20px; max-width: 66ch; font-size: 1.04rem; }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 44px 0 16px;
+    color: var(--ink);
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  blockquote {
+    margin: 28px 0;
+    padding: 4px 0 4px 22px;
+    border-left: 3px solid var(--ochre);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.18rem;
+    line-height: 1.5;
+    color: var(--ink);
+    max-width: 58ch;
+  }
+  blockquote cite {
+    display: block;
+    margin-top: 8px;
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+  }
+
+  /* Ficha lateral */
+  .ficha {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 20px 22px;
+    margin: 36px 0 8px;
+  }
+  .ficha h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin: 0 0 12px;
+  }
+  .ficha dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px 16px;
+    margin: 0;
+    font-size: 0.92rem;
+  }
+  .ficha dt { color: var(--ink-soft); }
+  .ficha dd { margin: 0; }
+
+  footer {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 24px 24px 60px;
+    color: var(--ink-soft);
+    font-size: 0.82rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  @media (max-width: 480px) {
+    article { padding: 32px 18px 60px; }
+    .byline { gap: 10px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="site-name">2T3 <span>Reportagens</span></p>
+    <p class="masthead-meta">Literatura da Diáspora e Migração</p>
+  </div>
+</header>
+
+<article>
+  <p class="kicker">Reportagem · Etapa 03</p>
+  <h1 class="headline">Deixar o Brasil para trás: o que duas histórias reais revelam sobre migrar</h1>
+  <p class="dek">Reportagem produzida para ampliar o repertório sociocultural de estudantes do Ensino Médio sobre migração e Literatura da Diáspora.</p>
+
+  <div class="byline">
+    <span>Produção: <strong>Turma 2T3</strong></span>
+    <span>Autores: <strong>Bruno, Miguel Peter e Samuel</strong></span>
+    <span>Fontes: <strong>Eduardo</strong> e <strong>Carol</strong>, entrevistados</span>
+  </div>
+
+  <p>Sair do país onde se nasceu nunca é um gesto simples. Envolve trabalho, família, cultura, idioma e, muitas vezes, a reconstrução de uma vida inteira em outro lugar. Para entender melhor esse processo, entrevistamos duas pessoas que migraram do Brasil por motivos de trabalho: Eduardo, que se mudou para a Namíbia, e Carol, que foi para Portugal com a família.</p>
+
+  <div class="ficha">
+    <h3>Ficha da reportagem</h3>
+    <dl>
+      <dt>Entrevistado 1</dt><dd>Eduardo — migrou para a Namíbia a trabalho</dd>
+      <dt>Entrevistada 2</dt><dd>Carol — migrou para Portugal em abril de 2022</dd>
+      <dt>Tipo de migração</dt><dd>Internacional e voluntária, nos dois casos</dd>
+    </dl>
+  </div>
+
+  <h2>Os motivos da partida</h2>
+  <p>Nos dois casos, a migração foi <strong>voluntária</strong> e <strong>internacional</strong> — não houve guerra, perseguição ou desastre empurrando essas pessoas para fora do país, mas sim a busca por oportunidades.</p>
+  <p>Eduardo foi designado pelo próprio trabalho para se mudar. Já Carol decidiu se mudar para Portugal buscando algo mais amplo: segurança e melhores oportunidades para os filhos.</p>
+  <blockquote>
+    "A gente queria uma vida mais segura, melhores oportunidades para os nossos filhos, mais qualidade de vida e também conhecer outros lugares."
+    Carol
+  </blockquote>
+  <p>Segundo ela, a decisão também foi influenciada pelo contexto do país na época, quando muitas portas estavam se fechando no Brasil. Em ambos os relatos, migrar por trabalho aparece como uma via de melhora na vida da família, alcançada em meio a planejamento — e, no caso de Eduardo, com um conselho direto para quem pensa em seguir esse caminho:</p>
+  <blockquote>
+    "Planeje, não vá fazer tudo de sopetão. Veja o passaporte, veja os vistos, veja as autorizações para trabalhar."
+    Eduardo
+  </blockquote>
+
+  <h2>Impactos culturais: o que fica e o que muda</h2>
+  <p>Migrar significa entrar em contato com outra cultura, outro idioma e outros costumes — e cada entrevistado lidou com isso de um jeito diferente.</p>
+  <p>Na Namíbia, o idioma oficial é o inglês, o que facilitou a adaptação de Eduardo. O maior estranhamento veio de datas comemorativas, como o Carnaval, que por lá passa despercebido. Mesmo assim, alguns hábitos brasileiros resistiram à distância:</p>
+  <blockquote>
+    "Uma coisa que eu não abri mão foi do arroz com feijão e do churrasco final de semana."
+    Eduardo
+  </blockquote>
+  <p>Carol viveu uma situação diferente: por falar a mesma língua, imaginava que a adaptação seria mais fácil. Não foi bem assim.</p>
+  <blockquote>
+    "Eu realmente achei que não teria problema porque era português, mas no começo eu entendia muito menos do que imaginava."
+    Carol
+  </blockquote>
+  <p>Hoje, ela mistura o português do Brasil com expressões de Portugal — "telemóvel", "autocarro", "comboio" — muitas vezes sem perceber. Ainda assim, mantém elementos da cultura brasileira, como a música e a literatura nacional.</p>
+
+  <h2>Impactos sociais: a distância como preço da mudança</h2>
+  <p>Um dos pontos mais sensíveis nos dois relatos é a distância da família e dos amigos que ficaram no Brasil. Mesmo com as ferramentas de comunicação disponíveis hoje, algo se perde no caminho.</p>
+  <blockquote>
+    "Se algum parente falecer, você não necessariamente vai conseguir chegar a tempo do enterro da pessoa."
+    Eduardo
+  </blockquote>
+  <p>Carol descreve um afastamento mais gradual: algumas amizades ficaram mais distantes, algumas acabaram, outras continuam. Segundo ela, a rotina com filhos e trabalho também dificulta manter relações à distância como antes.</p>
+
+  <h2>Impactos econômicos: uma troca com custos</h2>
+  <p>Nos dois casos, a migração está diretamente ligada a uma melhora nas condições de trabalho e de vida. Mas essa melhora não vem sem custos: adaptar-se a uma nova moeda, a um novo mercado, a uma nova burocracia e a uma nova rotina de moradia exige tempo e recursos. Mesmo uma migração bem-sucedida tem uma fase inicial de reorganização financeira e prática que pesa sobre quem migra.</p>
+
+  <h2>E os direitos de quem migra?</h2>
+  <p>As histórias de Eduardo e Carol são de migrações voluntárias, com apoio de trabalho e razoável estabilidade — realidade bem diferente da de milhões de pessoas ao redor do mundo que migram forçadas por guerras, violência, perseguição política ou desastres ambientais. Para essas pessoas, o processo costuma vir acompanhado de dificuldades bem mais graves: falta de documentação, moradia precária, dificuldade de acesso a trabalho formal, saúde e educação.</p>
+  <p>Isso reforça uma questão central quando se fala em migração: garantir direitos básicos — moradia, saúde, educação, trabalho digno — a quem migra ainda é um desafio para muitas sociedades, independentemente do motivo que levou a pessoa a sair do seu país de origem.</p>
+
+  <h2>Migrar é também se transformar</h2>
+  <blockquote>
+    "Mudar de país não é só fazer as malas e ir embora. É preciso se adaptar, sentir saudade, fazer novas amizades, criar uma rotina, aprender como as coisas funcionam e aceitar que algumas coisas vão mudar em você também."
+    Carol
+  </blockquote>
+  <p>Migrar, portanto, não é apenas uma mudança de endereço — é um processo que atravessa cultura, relações sociais e economia, e que revela, no fim, tanto sobre o lugar que se deixa quanto sobre a pessoa que se torna no caminho.</p>
+</article>
+
+<footer>
+  2T3 Reportagens — produzido para o trabalho de Literatura da Diáspora e Migração.
+</footer>
+
+</body>
+</html>
